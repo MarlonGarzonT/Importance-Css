@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
+
+body {
+  background-color: #121212;
+  color: #00ff9d;
+  font-family: "Onest", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 7rem;
+  margin-bottom: 20px;
+  color: #00ff9d;
+  text-shadow: 0 0 1px #00ff9d, /* Sombra cercana */ 0 0 3px #00ff9d,
+    /* Sombra intermedia */ 0 0 6px #00ff9d,
+    /* Sombra más lejana */ 0 0 9px #00ff9d,
+    /* Sombra más extensa */ 0 0 px #00ff9d;
+  /* Sombra muy difusa */
+  animation: neonGlow 5s infinite alternate-reverse;
+}
+
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 3px #00ff9d, 0 0 6px #00ff9d, 0 0 9px #00ff9d,
+      0 0 12px #00ff9d, 0 0 15px #00ff9d;
+  }
+
+  to {
+    text-shadow: 0 0 16px #00ff9d, 0 0 19px #00ff9d, 0 0 110px #00ff9d,
+      0 0 115px #00ff9d, 0 0 120px #00ff9d;
+  }
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: solid #00ff9d;
+  color: #00ff9d;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+button:hover {
+  background-color: #00cc7a;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #00ff9d, 0 0 30px #00ff9d, 0 0 45px #00ff9d,
+    0 0 60px #00ff9d;
+}
+
+.cursor-shadow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgba(0, 255, 157, 1);
+  filter: blur(100px);
+
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

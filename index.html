@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Futurista</title>
+    <link id="stylesheet" rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CONSULTORIO TECNOLOGICO</h1>
+        <button onclick="toggleStyles()">Desconectar CSS</button>
+    </div>
+    
+    <div class="cursor-shadow"></div>
+    
+    <script>
+        function toggleStyles() {
+            var stylesheet = document.getElementById('stylesheet');
+            if (stylesheet) {
+                stylesheet.parentNode.removeChild(stylesheet);
+            } else {
+                var link = document.createElement('link');
+                link.id = 'stylesheet';
+                link.rel = 'stylesheet';
+                link.href = 'styles.css';
+                document.head.appendChild(link);
+            }
+        }
+
+        document.addEventListener('mousemove', function(e) {
+            var cursorShadow = document.querySelector('.cursor-shadow');
+            cursorShadow.style.left = e.pageX + 'px';
+            cursorShadow.style.top = e.pageY + 'px';
+        });
+    </script>
+</body>
+</html>
